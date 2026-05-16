@@ -1,0 +1,88 @@
+show databases;
+CREATE DATABASE VITcampus;
+DROP DATABASE VITcaMpus;
+USE VITCampus;
+
+CREATE TABLE CSE(
+	sid int8,
+    sname varchar(50),
+    smarks int1
+);
+CREATE TABLE MECH(
+	sid int8,
+    sname varchar(50),
+    smarks int1
+);
+CREATE TABLE EEE(
+	sid int8,
+    sname varchar(50),
+    smarks int1
+);
+
+show tables from vitcampus;
+
+select * from cse;
+insert into cse values (101,'Souravjyoti',77);
+
+INSERT INTO CSE (sid, sname, smarks) VALUES
+(102, 'Priya Das', 78),
+(103, 'Rahul Verma', 92),
+(104, 'Sneha Roy', 67),
+(105, 'Karan Mehta', 88);
+
+INSERT INTO Mech (sid, sname, smarks) VALUES
+(201, 'Arjun Singh', 74),
+(202, 'Neha Patel', 81),
+(203, 'Vikram Rao', 69),
+(204, 'Pooja Sen', 90),
+(205, 'Ritesh Kumar', 76);
+
+INSERT INTO EEE (sid, sname, smarks) VALUES
+(301, 'Anjali Gupta', 84),
+(302, 'Sourav Das', 73),
+(303, 'Meera Nair', 95),
+(304, 'Rohan Dutta', 66),
+(305, 'Ishita Paul', 79);
+
+CREATE TABLE Students (
+    student_id INT,
+    student_name VARCHAR(50),
+    age INT,
+    department VARCHAR(30)
+);
+
+INSERT INTO Students VALUES
+(1, 'Amit Sharma', 20, 'CSE'),
+(2, 'Priya Das', 21, 'EEE'),
+(3, 'Rahul Verma', 22, 'MECH'),
+(4, 'Sneha Roy', 20, 'CIVIL'),
+(5, 'Karan Mehta', 23, 'CSE');
+
+
+CREATE TABLE Courses (
+    course_id INT,
+    course_name VARCHAR(50),
+    credits INT
+);
+
+INSERT INTO Courses VALUES
+(101, 'Database Management', 4),
+(102, 'Operating Systems', 3),
+(103, 'Thermodynamics', 4),
+(104, 'Circuit Theory', 3),
+(105, 'Data Structures', 4);
+
+
+CREATE TABLE Employees (
+    emp_id INT,
+    emp_name VARCHAR(50),
+    salary DECIMAL(10,2),
+    joining_date DATE
+);
+
+INSERT INTO Employees VALUES
+(1001, 'Rohan Das', 45000.00, '2023-01-15'),
+(1002, 'Meera Patel', 52000.00, '2022-11-10'),
+(1003, 'Arjun Singh', 60000.00, '2021-07-25'),
+(1004, 'Neha Gupta', 48000.00, '2024-03-05'),
+(1005, 'Vikram Rao', 55000.00, '2020-09-18');
