@@ -1,0 +1,91 @@
+USE vitcampus;
+
+CREATE TABLE Persons (
+    ID INT NOT NULL,
+    LastName VARCHAR(255) UNIQUE NOT NULL,
+    FirstName VARCHAR(255) NOT NULL,
+    Age INT
+);
+
+DESC Persons;
+
+INSERT INTO Persons
+VALUES (201, 'Sharma', 'Amit', NULL);
+
+SELECT * FROM Persons;
+
+ALTER TABLE Persons
+ADD CONSTRAINT unique_age UNIQUE (Age);
+
+ALTER TABLE Persons
+DROP INDEX unique_age;
+
+DROP TABLE Persons;
+
+CREATE TABLE Persons (
+    Age INT NOT NULL,
+    CHECK (Age >= 18 AND Age <= 25)
+);
+
+INSERT INTO Persons
+VALUES (22);
+
+CREATE TABLE Persons1 (
+    ID INT NOT NULL,
+    LastName VARCHAR(255) NOT NULL,
+    FirstName VARCHAR(255),
+    Age INT,
+    City VARCHAR(255) DEFAULT 'Bangalore'
+);
+
+DESC Persons1;
+
+CREATE TABLE products (
+    pid INT PRIMARY KEY,
+    pname VARCHAR(100) NOT NULL,
+    prefNo INT UNIQUE NOT NULL
+);
+
+DESC products;
+
+INSERT INTO products
+VALUES (301, 'Laptop', 45021);
+
+SELECT * FROM products;
+
+ALTER TABLE Persons
+ADD COLUMN ID INT PRIMARY KEY AUTO_INCREMENT;
+
+ALTER TABLE Persons
+DROP PRIMARY KEY;
+
+DROP TABLE products;
+
+CREATE TABLE category (
+    cid INT PRIMARY KEY,
+    cname VARCHAR(100) NOT NULL
+);
+
+INSERT INTO category
+VALUES 
+(201, 'Mobiles'),
+(202, 'Accessories');
+
+SELECT * FROM category;
+
+CREATE TABLE products (
+    pid INT PRIMARY KEY,
+    pname VARCHAR(100) NOT NULL,
+    cid INT,
+    FOREIGN KEY (cid) REFERENCES category(cid)
+);
+
+DESC products;
+
+DELETE FROM category
+WHERE cid = 202;
+
+INSERT INTO products
+VALUES (601, 'Wireless Mouse', 201);
+
+SELECT * FROM products;
