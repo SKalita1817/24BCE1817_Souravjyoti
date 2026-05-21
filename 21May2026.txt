@@ -1,0 +1,19 @@
+USE vitcampus;
+SELECT department, SUM(salary) FROM worker GROUP BY department;
+
+select department, sum(salary) from worker group by department having sum(salary)<300000;
+
+SELECT DEPARTMENT,SUM(SALARY) FROM Worker
+GROUP BY DEPARTMENT
+HAVING SUM(SALARY) < 300000;
+
+SELECT department, SUM(salary)
+FROM worker
+GROUP BY department
+ORDER BY SUM(salary) ASC
+LIMIT 2;
+
+SELECT worker_id, first_name, salary FROM worker
+WHERE department = 'Admin'
+ORDER BY salary DESC 
+LIMIT 1 OFFSET 1;
