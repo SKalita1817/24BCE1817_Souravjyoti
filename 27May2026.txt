@@ -1,0 +1,569 @@
+db.products.find({
+   "price":{
+      "$ne":699
+   }
+},
+{
+   "name":1,
+   "price":1
+}")"[
+   {
+      "_id":1,
+      "name":"xPhone",
+      "price":799
+   },
+   {
+      "_id":2,
+      "name":"xTablet",
+      "price":899
+   },
+   {
+      "_id":3,
+      "name":"SmartTablet",
+      "price":899
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "price":599
+   },
+   {
+      "_id":6,
+      "name":"xWidget"
+   }
+]"db.products.find("{
+   "spec.cpu":{
+      "$ne":3.66
+   }
+},
+{
+   "name":1,
+   "spec.cpu":1
+}")"[
+   {
+      "_id":1,
+      "name":"xPhone",
+      "spec":{
+         "cpu":2.66
+      }
+   },
+   {
+      "_id":4,
+      "name":"SmartPad",
+      "spec":{
+         "cpu":1.66
+      }
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "spec":{
+         "cpu":1.66
+      }
+   }
+]"db.products.find("{
+   "storage":{
+      "$ne":256
+   }
+},
+{
+   "name":1,
+   "storage":1
+}")"[
+   {
+      "_id":6,
+      "name":"xWidget",
+      "storage":[
+         1024
+      ]
+   }
+]"db.products.find("{
+   "releaseDate":{
+      "$ne":"new ISODate(""2020-05-14"")"
+   }
+},
+{
+   "name":1,
+   "releaseDate":1
+}")"[
+   {
+      "_id":1,
+      "name":"xPhone",
+      "releaseDate":"ISODate(""2011-05-14T00:00:00.000Z"")"
+   },
+   {
+      "_id":2,
+      "name":"xTablet",
+      "releaseDate":"ISODate(""2011-09-01T00:00:00.000Z"")"
+   },
+   {
+      "_id":3,
+      "name":"SmartTablet",
+      "releaseDate":"ISODate(""2015-01-14T00:00:00.000Z"")"
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "releaseDate":"ISODate(""2022-09-14T00:00:00.000Z"")"
+   },
+   {
+      "_id":6,
+      "name":"xWidget"
+   }
+]"db.products.find("{
+   "price":{
+      "$in":[
+         599,
+         899
+      ]
+   }
+},
+{
+   "name":1,
+   "price":1
+}")"[
+   {
+      "_id":2,
+      "name":"xTablet",
+      "price":899
+   },
+   {
+      "_id":3,
+      "name":"SmartTablet",
+      "price":899
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "price":599
+   }
+]"db.products.find("{
+   "color":{
+      "$in":[
+         "blue",
+         "gold"
+      ]
+   }
+},
+{
+   "name":1,
+   "color":1
+}")"[
+   {
+      "_id":3,
+      "name":"SmartTablet",
+      "color":[
+         "blue"
+      ]
+   },
+   {
+      "_id":4,
+      "name":"SmartPad",
+      "color":[
+         "white",
+         "orange",
+         "gold",
+         "gray"
+      ]
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "color":[
+         "white",
+         "orange",
+         "gold",
+         "gray"
+      ]
+   }
+]"db.products.find("{
+   "color":{
+      "$in":[
+         "/^b+/",
+         "/^o+/"
+      ]
+   }
+},
+{
+   "name":1,
+   "color":1
+}")"[
+   {
+      "_id":1,
+      "name":"xPhone",
+      "color":[
+         "white",
+         "black"
+      ]
+   },
+   {
+      "_id":2,
+      "name":"xTablet",
+      "color":[
+         "white",
+         "black",
+         "purple"
+      ]
+   },
+   {
+      "_id":3,
+      "name":"SmartTablet",
+      "color":[
+         "blue"
+      ]
+   },
+   {
+      "_id":4,
+      "name":"SmartPad",
+      "color":[
+         "white",
+         "orange",
+         "gold",
+         "gray"
+      ]
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "color":[
+         "white",
+         "orange",
+         "gold",
+         "gray"
+      ]
+   }
+]"db.products.find("{
+   "price":{
+      "$nin":[
+         599,
+         699
+      ]
+   }
+},
+{
+   "name":1,
+   "price":1
+}")"[
+   {
+      "_id":1,
+      "name":"xPhone",
+      "price":799
+   },
+   {
+      "_id":2,
+      "name":"xTablet",
+      "price":899
+   },
+   {
+      "_id":3,
+      "name":"SmartTablet",
+      "price":899
+   }
+]"db.products.find("{
+   "color":{
+      "$nin":[
+         "gold",
+         "orange"
+      ]
+   }
+},
+{
+   "name":1,
+   "color":1
+}")"[
+   {
+      "_id":1,
+      "name":"xPhone",
+      "color":[
+         "white",
+         "black"
+      ]
+   },
+   {
+      "_id":2,
+      "name":"xTablet",
+      "color":[
+         "white",
+         "black",
+         "purple"
+      ]
+   },
+   {
+      "_id":3,
+      "name":"SmartTablet",
+      "color":[
+         "blue"
+      ]
+   }
+]"db.products.find("{
+   "color":{
+      "$nin":[
+         "/^w+/",
+         "/^g+/"
+      ]
+   }
+},
+{
+   "name":1,
+   "color":1
+}")"[
+   {
+      "_id":2,
+      "name":"xTablet",
+      "color":[
+         "white",
+         "black",
+         "purple"
+      ]
+   },
+   {
+      "_id":3,
+      "name":"SmartTablet",
+      "color":[
+         "blue"
+      ]
+   }
+]"db.products.find("{
+   "$and":[
+      {
+         "price":799
+      },
+      {
+         "color":{
+            "$in":[
+               "white",
+               "black"
+            ]
+         }
+      }
+   ]
+},
+{
+   "name":1,
+   "price":1,
+   "color":1
+}")"[
+   {
+      "_id":1,
+      "name":"xPhone",
+      "price":799,
+      "color":[
+         "white",
+         "black"
+      ]
+   }
+]"db.products.find("{
+   "$and":[
+      {
+         "price":599
+      },
+      {
+         "price":{
+            "$exists":true
+         }
+      }
+   ]
+},
+{
+   "name":1,
+   "price":1,
+   "color":1
+}")"[
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "price":599,
+      "color":[
+         "white",
+         "orange",
+         "gold",
+         "gray"
+      ]
+   }
+]"db.products.find("{
+   "$or":[
+      {
+         "price":699
+      },
+      {
+         "price":599
+      }
+   }
+]
+},
+{
+   "name":1,
+   "price":1
+}")"[
+   {
+      "_id":4,
+      "name":"SmartPad",
+      "price":699
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "price":599
+   }
+]"db.products.find("{
+   "$or":[
+      {
+         "price":{
+            "$lt":600
+         }
+      },
+      {
+         "price":{
+            "$gt":850
+         }
+      }
+   ]
+},
+{
+   "name":1,
+   "price":1
+}")"[
+   {
+      "_id":2,
+      "name":"xTablet",
+      "price":899
+   },
+   {
+      "_id":3,
+      "name":"SmartTablet",
+      "price":899
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "price":599
+   }
+]"db.products.find("{
+   "price":{
+      "$not":{
+         "$gt":799
+      }
+   }
+},
+{
+   "name":1,
+   "price":1
+}")"[
+   {
+      "_id":1,
+      "name":"xPhone",
+      "price":799
+   },
+   {
+      "_id":4,
+      "name":"SmartPad",
+      "price":699
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "price":599
+   },
+   {
+      "_id":6,
+      "name":"xWidget"
+   }
+]"db.products.find("{
+   "price":{
+      "$lte":799
+   }
+},
+{
+   "name":1,
+   "price":1
+}")"[
+   {
+      "_id":1,
+      "name":"xPhone",
+      "price":799
+   },
+   {
+      "_id":4,
+      "name":"SmartPad",
+      "price":699
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "price":599
+   }
+]"db.products.find("{
+   "name":{
+      "$not":"/^x+/"
+   }
+},
+{
+   "name":1
+}")"[
+   {
+      "_id":3,
+      "name":"SmartTablet"
+   },
+   {
+      "_id":4,
+      "name":"SmartPad"
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone"
+   }
+]"db.products.find("{
+   "$nor":[
+      {
+         "price":799
+      },
+      {
+         "color":"blue"
+      }
+   ]
+},
+{
+   "name":1,
+   "price":1,
+   "color":1
+}")"[
+   {
+      "_id":2,
+      "name":"xTablet",
+      "price":899,
+      "color":[
+         "white",
+         "black",
+         "purple"
+      ]
+   },
+   {
+      "_id":4,
+      "name":"SmartPad",
+      "price":699,
+      "color":[
+         "white",
+         "orange",
+         "gold",
+         "gray"
+      ]
+   },
+   {
+      "_id":5,
+      "name":"SmartPhone",
+      "price":599,
+      "color":[
+         "white",
+         "orange",
+         "gold",
+         "gray"
+      ]
+   },
+   {
+      "_id":6,
+      "name":"xWidget",
+      "color":[
+         "black"
+      ]
+   }
+]
